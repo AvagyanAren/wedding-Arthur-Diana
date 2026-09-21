@@ -1,19 +1,41 @@
+"use client";
+
 import Image from "next/image";
+import { motion, useReducedMotion } from "framer-motion";
 import { INVITATION } from "@/lib/invitation";
+import { enterProps, useMotionReady } from "@/lib/motion";
 
 export function Hero() {
   const { couple, hero } = INVITATION;
+  const reduceMotion = useReducedMotion();
+  const ready = useMotionReady();
 
   return (
     <header className="relative isolate min-h-[100svh] overflow-hidden">
-      <Image
-        src={hero.image.src}
-        alt={hero.image.alt}
-        fill
-        priority
-        sizes="(max-width: 480px) 100vw, 480px"
-        className="object-cover object-[72%_center]"
-      />
+      <motion.div
+        className="absolute inset-0"
+        initial={{ scale: 1 }}
+        animate={reduceMotion || !ready ? { scale: 1 } : { scale: 1.04 }}
+        transition={
+          reduceMotion || !ready
+            ? { duration: 0 }
+            : {
+                duration: 18,
+                ease: "linear",
+                repeat: Infinity,
+                repeatType: "mirror",
+              }
+        }
+      >
+        <Image
+          src={hero.image.src}
+          alt={hero.image.alt}
+          fill
+          priority
+          sizes="(max-width: 480px) 100vw, 480px"
+          className="object-cover object-[72%_center]"
+        />
+      </motion.div>
 
       <div
         aria-hidden="true"
@@ -21,28 +43,39 @@ export function Hero() {
       />
 
       <div className="relative z-10 flex min-h-[100svh] flex-col items-center px-8 pb-10 pt-14 text-center text-white/90">
-        <p className="font-sans text-[10px] font-normal uppercase tracking-[0.38em]">
+        <motion.p
+          className="font-sans text-[10px] font-normal uppercase tracking-[0.38em]"
+          {...enterProps(reduceMotion, 0, ready)}
+        >
           {hero.kicker}
-        </p>
+        </motion.p>
 
-        <h1 className="mt-8 flex flex-col items-center font-serif font-normal leading-none">
+        <motion.h1
+          className="mt-8 flex flex-col items-center font-serif font-normal leading-none"
+          {...enterProps(reduceMotion, 0.1, ready)}
+        >
           <span className="text-[3.35rem] tracking-wide">{couple.groom}</span>
           <span className="my-2 font-serif text-2xl font-light italic">
             {couple.conjunction}
           </span>
           <span className="text-[3.35rem] tracking-wide">{couple.bride}</span>
-        </h1>
+        </motion.h1>
 
-        <p className="mt-6 font-sans text-[11px] uppercase tracking-[0.32em]">
-          {hero.date}
-        </p>
-        <p className="mt-2 font-sans text-[11px] uppercase tracking-[0.32em]">
-          {hero.place}
-        </p>
+        <motion.div {...enterProps(reduceMotion, 0.2, ready)}>
+          <p className="mt-6 font-sans text-[11px] uppercase tracking-[0.32em]">
+            {hero.date}
+          </p>
+          <p className="mt-2 font-sans text-[11px] uppercase tracking-[0.32em]">
+            {hero.place}
+          </p>
+        </motion.div>
 
-        <p className="mt-auto font-sans text-[10px] uppercase tracking-[0.38em]">
+        <motion.p
+          className="mt-auto font-sans text-[10px] uppercase tracking-[0.38em]"
+          {...enterProps(reduceMotion, 0.3, ready)}
+        >
           {hero.closing}
-        </p>
+        </motion.p>
       </div>
     </header>
   );

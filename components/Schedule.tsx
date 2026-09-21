@@ -1,3 +1,6 @@
+"use client";
+
+import { motion, useReducedMotion } from "framer-motion";
 import { INVITATION, type ScheduleIcon } from "@/lib/invitation";
 import {
   CameraIcon,
@@ -5,6 +8,7 @@ import {
   GlassesIcon,
   RingsIcon,
 } from "@/components/Icons";
+import { revealTransition, viewportOnce } from "@/lib/motion";
 
 function ScheduleGlyph({
   name,
@@ -27,6 +31,7 @@ function ScheduleGlyph({
 
 export function Schedule() {
   const { schedule } = INVITATION;
+  const reduceMotion = useReducedMotion();
 
   return (
     <section
@@ -41,18 +46,31 @@ export function Schedule() {
       </h2>
 
       <ol className="relative mt-12">
-        <span
+        <motion.span
           aria-hidden="true"
           className="absolute bottom-6 left-5 top-6 w-px bg-sage/50"
+          style={{ originY: 0 }}
+          initial={{ scaleY: reduceMotion ? 1 : 0 }}
+          whileInView={{ scaleY: 1 }}
+          viewport={viewportOnce}
+          transition={reduceMotion ? { duration: 0 } : revealTransition}
         />
 
         {schedule.items.map((item, index) => {
           const isLast = index === schedule.items.length - 1;
 
           return (
-            <li
+            <motion.li
               key={item.time}
               className={`relative flex items-center gap-5 ${isLast ? "pb-4" : "pb-10"}`}
+              initial={{ opacity: 0, y: reduceMotion ? 0 : 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={viewportOnce}
+              transition={{
+                duration: reduceMotion ? 0.4 : 0.6,
+                ease: "easeOut",
+                delay: reduceMotion ? 0 : index * 0.08,
+              }}
             >
               <span className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-olive/45 bg-white text-leaf">
                 <ScheduleGlyph name={item.icon} className="h-[22px] w-[22px]" />
@@ -69,7 +87,7 @@ export function Schedule() {
                   {item.title}
                 </h3>
               </div>
-            </li>
+            </motion.li>
           );
         })}
       </ol>

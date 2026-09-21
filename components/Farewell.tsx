@@ -1,9 +1,14 @@
+"use client";
+
 import Image from "next/image";
+import { motion, useReducedMotion } from "framer-motion";
 import { HeartIcon } from "@/components/Icons";
 import { INVITATION } from "@/lib/invitation";
+import { revealProps } from "@/lib/motion";
 
 export function Farewell() {
   const { farewell } = INVITATION;
+  const reduceMotion = useReducedMotion();
 
   return (
     <section className="relative isolate min-h-[52svh] overflow-hidden">
@@ -20,13 +25,21 @@ export function Farewell() {
       />
 
       <div className="relative z-10 flex min-h-[52svh] flex-col items-center justify-center px-8 py-16 text-center text-white">
-        <p className="font-serif text-[1.65rem] font-light italic leading-snug tracking-wide">
+        <motion.p
+          className="font-serif text-[1.65rem] font-light italic leading-snug tracking-wide"
+          {...revealProps(reduceMotion, 0)}
+        >
           {farewell.message}
-        </p>
-        <HeartIcon className="mt-3 h-5 w-5 text-white/90" />
-        <p className="mt-4 font-sans text-[11px] uppercase tracking-[0.32em] text-white/90">
+        </motion.p>
+        <motion.span className="mt-3 inline-flex" {...revealProps(reduceMotion, 0.1)}>
+          <HeartIcon className="h-5 w-5 text-white/90" />
+        </motion.span>
+        <motion.p
+          className="mt-4 font-sans text-[11px] uppercase tracking-[0.32em] text-white/90"
+          {...revealProps(reduceMotion, 0.2)}
+        >
           {farewell.names}
-        </p>
+        </motion.p>
       </div>
     </section>
   );

@@ -117,53 +117,37 @@ export function PinIcon({ className }: IconProps) {
   );
 }
 
-export function PinSolidIcon({ className }: IconProps) {
+export function MapOutlineIcon({ className }: IconProps) {
   return (
-    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      className={className}
+      aria-hidden="true"
+      fill="none"
+    >
       <path
         fill="currentColor"
-        fillRule="evenodd"
-        d="M12 2.6c-3.7 0-6.7 3-6.7 6.7 0 5.1 6.7 12.1 6.7 12.1s6.7-7 6.7-12.1c0-3.7-3-6.7-6.7-6.7Zm0 4.3a2.4 2.4 0 1 0 0 4.8 2.4 2.4 0 0 0 0-4.8Z"
+        d="M8.16113 2.58068C8.68891 2.31686 9.31109 2.31686 9.83887 2.58068L14.832 5.07775C14.9376 5.13054 15.0624 5.13054 15.168 5.07775L19.0361 3.14318C20.2827 2.52005 21.7497 3.42638 21.75 4.81994V17.3043C21.75 18.0143 21.3488 18.6634 20.7139 18.9811L15.8389 21.4186C15.311 21.6825 14.689 21.6825 14.1611 21.4186L9.16797 18.9225C9.06248 18.8698 8.93752 18.8698 8.83203 18.9225L4.96387 20.8561C3.71718 21.4794 2.25 20.5732 2.25 19.1793V6.69494C2.25015 5.98504 2.65126 5.33581 3.28613 5.01818L8.16113 2.58068ZM9.16797 3.92248C9.06248 3.8698 8.93752 3.8698 8.83203 3.92248L3.95703 6.35998C3.83033 6.42351 3.75015 6.5532 3.75 6.69494V19.1793C3.75 19.4581 4.04363 19.6399 4.29297 19.5153L8.16113 17.5807C8.68891 17.3169 9.31109 17.3169 9.83887 17.5807L14.832 20.0778C14.9376 20.1305 15.0624 20.1305 15.168 20.0778L20.043 17.6403C20.1699 17.5767 20.25 17.4463 20.25 17.3043V4.81994C20.2497 4.54145 19.9562 4.36052 19.707 4.48498L15.8389 6.41857C15.311 6.68251 14.689 6.68251 14.1611 6.41857L9.16797 3.92248ZM15 8.24963C15.4141 8.24963 15.7498 8.58561 15.75 8.99963V17.2496C15.75 17.6638 15.4142 17.9996 15 17.9996C14.5858 17.9996 14.25 17.6638 14.25 17.2496V8.99963C14.2502 8.58561 14.5859 8.24963 15 8.24963ZM9 5.99963C9.41408 5.99963 9.74978 6.33561 9.75 6.74963V14.9996C9.75 15.4138 9.41421 15.7496 9 15.7496C8.58579 15.7496 8.25 15.4138 8.25 14.9996V6.74963C8.25022 6.33561 8.58592 5.99963 9 5.99963Z"
       />
     </svg>
   );
 }
 
-export function UtensilsIcon({ className }: IconProps) {
+export function ArrowTopRightOnSquareIcon({ className }: IconProps) {
   return (
-    <svg viewBox="0 0 24 24" className={className} aria-hidden="true" fill="none">
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      className={className}
+      aria-hidden="true"
+      fill="none"
+    >
       <path
-        d="M7.2 4.2v5.2M5.4 4.2v3.6M9 4.2v3.6M7.2 9.4V19.6"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-      />
-      <path
-        d="M16.4 4.2c.4 4.2.2 7.2-1.6 9.4V19.6"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M16.4 4.2c-1.4 3.4-1.4 6.6 0 9.4"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-export function ArrowIcon({ className }: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} aria-hidden="true" fill="none">
-      <path
-        d="M5 12h14M14 7l5 5-5 5"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        fill="currentColor"
+        d="M13.5 5.25C13.9142 5.25 14.25 5.58579 14.25 6C14.25 6.41421 13.9142 6.75 13.5 6.75H5.25C4.42157 6.75 3.75 7.42157 3.75 8.25V18.75C3.75 19.5784 4.42157 20.25 5.25 20.25H15.75C16.5784 20.25 17.25 19.5784 17.25 18.75V10.5C17.25 10.0858 17.5858 9.75 18 9.75C18.4142 9.75 18.75 10.0858 18.75 10.5V18.75C18.75 20.4069 17.4069 21.75 15.75 21.75H5.25C3.59315 21.75 2.25 20.4069 2.25 18.75V8.25C2.25 6.59315 3.59315 5.25 5.25 5.25H13.5ZM21 2.25C21.1989 2.25 21.3896 2.32907 21.5303 2.46973C21.6709 2.61038 21.75 2.80109 21.75 3V8.25C21.75 8.66421 21.4142 9 21 9C20.5858 9 20.25 8.66421 20.25 8.25V4.81055L8.03027 17.0303C7.73738 17.3232 7.26262 17.3232 6.96973 17.0303C6.67683 16.7374 6.67683 16.2626 6.96973 15.9697L19.1895 3.75H15.75C15.3358 3.75 15 3.41421 15 3C15 2.58579 15.3358 2.25 15.75 2.25H21Z"
       />
     </svg>
   );
@@ -182,23 +166,3 @@ export function HeartIcon({ className }: IconProps) {
   );
 }
 
-export function OliveBranch({ className }: IconProps) {
-  return (
-    <svg viewBox="0 0 180 100" className={className} aria-hidden="true" fill="none">
-      <path
-        d="M6 86c34-8 62-26 94-50 22-16 42-28 76-32"
-        stroke="currentColor"
-        strokeWidth="1.3"
-        strokeLinecap="round"
-      />
-      <ellipse cx="40" cy="62" rx="7" ry="13" transform="rotate(-42 40 62)" stroke="currentColor" strokeWidth="1.2" />
-      <ellipse cx="58" cy="48" rx="7" ry="13" transform="rotate(-32 58 48)" stroke="currentColor" strokeWidth="1.2" />
-      <ellipse cx="78" cy="34" rx="6.5" ry="12" transform="rotate(-22 78 34)" stroke="currentColor" strokeWidth="1.2" />
-      <ellipse cx="100" cy="22" rx="6" ry="11" transform="rotate(-12 100 22)" stroke="currentColor" strokeWidth="1.2" />
-      <ellipse cx="122" cy="14" rx="5.5" ry="10" transform="rotate(2 122 14)" stroke="currentColor" strokeWidth="1.2" />
-      <ellipse cx="144" cy="10" rx="5" ry="9" transform="rotate(12 144 10)" stroke="currentColor" strokeWidth="1.2" />
-      <ellipse cx="50" cy="70" rx="6" ry="11" transform="rotate(-50 50 70)" stroke="currentColor" strokeWidth="1.2" />
-      <ellipse cx="88" cy="42" rx="5.5" ry="10" transform="rotate(-28 88 42)" stroke="currentColor" strokeWidth="1.2" />
-    </svg>
-  );
-}

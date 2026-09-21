@@ -3,18 +3,7 @@ export type ScheduleIcon = "car" | "rings" | "camera" | "glasses";
 export type ScheduleItem = {
   time: string;
   title: string;
-  description: string;
   icon: ScheduleIcon;
-};
-
-export type MapPin = {
-  id: string;
-  label: string;
-  href: string;
-  ariaLabel: string;
-  icon: "pin" | "utensils";
-  top: string;
-  left: string;
 };
 
 export const INVITATION = {
@@ -44,26 +33,21 @@ export const INVITATION = {
       {
         time: "13:00",
         title: "Հանդիպում Սաղմոսավանքում",
-        description: "Հավաքվում ենք Սաղմոսավանքի մոտ",
         icon: "car",
       },
       {
         time: "13:20",
         title: "Պսակադրություն",
-        description: "Սուրբ պսակ և աղոթք Սաղմոսավանքի եկեղեցում",
         icon: "rings",
       },
       {
         time: "14:00",
         title: "Լուսանկարչություն",
-        description: "Հիշարժան լուսանկարների համար",
         icon: "camera",
       },
       {
         time: "15:00",
         title: "Ֆուրշետ Սաղմոսավանք Garden-ում",
-        description:
-          "Սպասում ենք ձեզ մի օր լի երգով, խնդությամբ և լավ ընկերության միջոցով",
         icon: "glasses",
       },
     ] satisfies ScheduleItem[],
@@ -74,28 +58,11 @@ export const INVITATION = {
     name: "Սաղմոսավանք",
     region: "Աշտարակ, Հայաստան",
     openMapLabel: "Բացել քարտեզում",
-    openMapUrl:
-      "https://www.google.com/maps/search/?api=1&query=40.380536,44.396672",
-    pins: [
-      {
-        id: "monastery",
-        label: "Սաղմոսավանք",
-        href: "https://www.google.com/maps/search/?api=1&query=40.380536,44.396672",
-        ariaLabel: "Բացել Սաղմոսավանքի քարտեզը",
-        icon: "pin",
-        top: "34%",
-        left: "58%",
-      },
-      {
-        id: "garden",
-        label: "Սաղմոսավանք\nGarden",
-        href: "https://yandex.com/maps/org/saghmosavan_garden/82933691801/",
-        ariaLabel: "Բացել Սաղմոսավանք Garden-ի քարտեզը",
-        icon: "utensils",
-        top: "62%",
-        left: "28%",
-      },
-    ] satisfies MapPin[],
+    openMapUrl: "https://yandex.com/maps/-/CXAxNO0V",
+    mapImage: {
+      src: "/images/venue-map.png",
+      alt: "Սաղմոսավանքի քարտեզ՝ վանքի նշումով",
+    },
   },
 
   farewell: {

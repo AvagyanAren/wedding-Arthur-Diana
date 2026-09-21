@@ -29,12 +29,3 @@ body {
   background: #d8e0cf;
   color: #3e4338;
 }
-
-.map-panel {
-  background-color: #c5d0b4;
-  background-image:
-    radial-gradient(ellipse at 18% 24%, rgba(255, 255, 255, 0.38), transparent 46%),
-    radial-gradient(ellipse at 82% 70%, rgba(90, 104, 72, 0.16), transparent 50%),
-    radial-gradient(ellipse at 46% 88%, rgba(216, 224, 207, 0.45), transparent 42%),
-    linear-gradient(120deg, rgba(255, 255, 255, 0.08) 0%, transparent 40%, rgba(90, 104, 72, 0.08) 100%);
-}

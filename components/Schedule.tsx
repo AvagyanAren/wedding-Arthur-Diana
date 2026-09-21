@@ -8,7 +8,7 @@ import {
   GlassesIcon,
   RingsIcon,
 } from "@/components/Icons";
-import { revealTransition, viewportOnce } from "@/lib/motion";
+import { revealTransition, viewportReplay } from "@/lib/motion";
 
 function ScheduleGlyph({
   name,
@@ -52,7 +52,7 @@ export function Schedule() {
           style={{ originY: 0 }}
           initial={{ scaleY: reduceMotion ? 1 : 0 }}
           whileInView={{ scaleY: 1 }}
-          viewport={viewportOnce}
+          viewport={viewportReplay}
           transition={reduceMotion ? { duration: 0 } : revealTransition}
         />
 
@@ -64,12 +64,19 @@ export function Schedule() {
               key={item.time}
               className={`relative flex items-center gap-5 ${isLast ? "pb-4" : "pb-10"}`}
               initial={{ opacity: 0, y: reduceMotion ? 0 : 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={viewportOnce}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                transition: {
+                  duration: reduceMotion ? 0.4 : 0.6,
+                  ease: "easeOut",
+                  delay: reduceMotion ? 0 : index * 0.08,
+                },
+              }}
+              viewport={viewportReplay}
               transition={{
-                duration: reduceMotion ? 0.4 : 0.6,
+                duration: reduceMotion ? 0.25 : 0.4,
                 ease: "easeOut",
-                delay: reduceMotion ? 0 : index * 0.08,
               }}
             >
               <span className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-olive/45 bg-white text-leaf">

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { INVITATION } from "@/lib/invitation";
-import { enterProps, useMotionReady } from "@/lib/motion";
+import { revealProps, useMotionReady } from "@/lib/motion";
 
 export function Hero() {
   const { couple, hero } = INVITATION;
@@ -45,14 +45,14 @@ export function Hero() {
       <div className="relative z-10 flex min-h-[100svh] flex-col items-center px-8 pb-10 pt-14 text-center text-white/90">
         <motion.p
           className="font-sans text-[10px] font-normal uppercase tracking-[0.38em]"
-          {...enterProps(reduceMotion, 0, ready)}
+          {...revealProps(reduceMotion, 0)}
         >
           {hero.kicker}
         </motion.p>
 
         <motion.h1
           className="mt-8 flex flex-col items-center font-serif font-normal leading-none"
-          {...enterProps(reduceMotion, 0.1, ready)}
+          {...revealProps(reduceMotion, 0.1)}
         >
           <span className="text-[3.35rem] tracking-wide">{couple.groom}</span>
           <span className="my-2 font-serif text-2xl font-light italic">
@@ -61,7 +61,7 @@ export function Hero() {
           <span className="text-[3.35rem] tracking-wide">{couple.bride}</span>
         </motion.h1>
 
-        <motion.div {...enterProps(reduceMotion, 0.2, ready)}>
+        <motion.div {...revealProps(reduceMotion, 0.2)}>
           <p className="mt-6 font-sans text-[11px] uppercase tracking-[0.32em]">
             {hero.date}
           </p>
@@ -72,7 +72,7 @@ export function Hero() {
 
         <motion.p
           className="mt-auto font-sans text-[10px] uppercase tracking-[0.38em]"
-          {...enterProps(reduceMotion, 0.3, ready)}
+          {...revealProps(reduceMotion, 0.3)}
         >
           {hero.closing}
         </motion.p>

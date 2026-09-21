@@ -50,7 +50,7 @@ export const INVITATION = {
       },
       {
         time: "14:00",
-        title: "Լուսանկարչություն",
+        title: "Լուսանկարահանում",
         icon: "camera",
       },
       {

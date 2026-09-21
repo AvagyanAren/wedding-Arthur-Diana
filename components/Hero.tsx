@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
+import { Countdown } from "@/components/Countdown";
 import { INVITATION } from "@/lib/invitation";
 import { revealProps, useMotionReady } from "@/lib/motion";
 
@@ -70,8 +71,12 @@ export function Hero() {
           </p>
         </motion.div>
 
+        <motion.div className="mt-auto" {...revealProps(reduceMotion, 0.25)}>
+          <Countdown />
+        </motion.div>
+
         <motion.p
-          className="mt-auto font-sans text-[10px] uppercase tracking-[0.38em]"
+          className="mt-8 font-sans text-[10px] uppercase tracking-[0.38em]"
           {...revealProps(reduceMotion, 0.3)}
         >
           {hero.closing}

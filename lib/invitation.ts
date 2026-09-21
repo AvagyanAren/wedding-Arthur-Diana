@@ -16,6 +16,14 @@ export const INVITATION = {
 
   eventDateISO: "2026-10-18T13:00:00+04:00",
 
+  countdown: {
+    days: "օր",
+    hours: "ժամ",
+    minutes: "րոպե",
+    seconds: "վրկ",
+    ariaLabel: "Մնացած ժամանակը մինչև հարսանիքը՝ 18 հոկտեմբերի 2026, ժամը 13:00",
+  },
+
   hero: {
     kicker: "Մեր հարսանյաց օրը",
     date: "18 հոկտեմբերի 2026",

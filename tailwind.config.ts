@@ -8,6 +8,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        cream: "#F4F0E8",
         mint: "#F0F3ED",
         sageSoft: "#D8E0CF",
         sage: "#A9B79D",
@@ -21,12 +22,13 @@ const config: Config = {
       fontFamily: {
         serif: ["var(--font-serif)", "Georgia", "serif"],
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
-        display: ["var(--font-display)", "var(--font-serif)", "serif"],
-        script: ["var(--font-script)", "var(--font-display)", "cursive"],
       },
       letterSpacing: {
         widest2: "0.25em",
         widest3: "0.35em",
+      },
+      boxShadow: {
+        invitation: "0 12px 40px rgba(62, 67, 56, 0.08)",
       },
     },
   },

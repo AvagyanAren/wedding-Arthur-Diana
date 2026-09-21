@@ -1,19 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import {
-  Cormorant_Garamond,
-  Noto_Serif_Armenian,
-  Noto_Sans_Armenian,
-  Great_Vibes,
-} from "next/font/google";
+import { Noto_Sans_Armenian, Noto_Serif_Armenian } from "next/font/google";
 import "./globals.css";
-
-const display = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["300", "400", "500"],
-  style: ["normal", "italic"],
-  variable: "--font-display",
-  display: "swap",
-});
 
 const serif = Noto_Serif_Armenian({
   subsets: ["armenian"],
@@ -29,17 +16,10 @@ const sans = Noto_Sans_Armenian({
   display: "swap",
 });
 
-const script = Great_Vibes({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-script",
-  display: "swap",
-});
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://wedding-h-m.vercel.app"),
-  title: "Հովհաննես և Մարիա · Հարսանիք",
-  description: "Հրավեր մեր հարսանիքին · 18 ապրիլի 2026",
+  title: "Արթուր և Դիանա · Հարսանիք",
+  description: "Հրավեր մեր հարսանիքին · 18 հոկտեմբերի 2026 · Սաղմոսավանք",
 };
 
 export const viewport: Viewport = {
@@ -53,11 +33,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="hy"
-      className={`${display.variable} ${serif.variable} ${sans.variable} ${script.variable}`}
-    >
-      <body className="watercolor-bg font-sans text-charcoal">{children}</body>
+    <html lang="hy" className={`${serif.variable} ${sans.variable}`}>
+      <body className="bg-cream font-sans text-charcoal">{children}</body>
     </html>
   );
 }

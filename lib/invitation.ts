@@ -1,59 +1,110 @@
-export type EventEntry = {
+export type ScheduleIcon = "car" | "rings" | "camera" | "glasses";
+
+export type ScheduleItem = {
   time: string;
   title: string;
-  address?: string;
-  /** If set, `address` is shown as a link (e.g. maps directions). */
-  addressUrl?: string;
+  description: string;
+  icon: ScheduleIcon;
+};
+
+export type MapPin = {
+  id: string;
+  label: string;
+  href: string;
+  ariaLabel: string;
+  icon: "pin" | "utensils";
+  top: string;
+  left: string;
 };
 
 export const INVITATION = {
   couple: {
-    groom: { first: "Հովհաննես", last: "Կարապետյան" },
-    bride: { first: "Մարիա", last: "Մինասյան" },
-    combined: "Հովհաննես և Մարիա",
+    groom: "Արթուր",
+    bride: "Դիանա",
+    conjunction: "եւ",
+    combined: "Արթուր և Դիանա",
   },
 
-  eventDateISO: "2026-04-18T18:00:00+04:00",
+  eventDateISO: "2026-10-18T13:00:00+04:00",
 
-  dateDisplay: {
-    dayName: "Շաբաթ",
-    long: "18 ապրիլի 2026",
-    short: "18.04.2026",
-    time: "18:00",
+  hero: {
+    kicker: "Մեր հարսանյաց օրը",
+    date: "18 հոկտեմբերի 2026",
+    place: "Սաղմոսավանք",
+    closing: "Մեր սերը հավերժ է",
+    image: {
+      src: "/images/hero.jpg",
+      alt: "Սաղմոսավանքի վանական համալիրը երեկոյան լույսի ներքո",
+    },
   },
 
-  city: "Երևան, Հայաստան",
-
-  events: [
-    {
-      time: "15:30",
-      title: "ՍՈՒՐԲ ԳԱՅԱՆԵ ԵԿԵՂԵՑԻ",
-      address: "Էջմիածին",
-      addressUrl:
-        "https://yandex.com/maps/org/225773844967/?ll=44.294199%2C40.157293&z=17.64",
-    },
-    {
-      time: "18:00",
-      title: "ԼԻԱՆՆԱ ԳԱՐԴԵՆ ՀՈԼԼ",
-      address: "Փարաքար, Երիտասարդության 34",
-      addressUrl:
-        "https://yandex.com/maps/org/75872747374/?ll=44.391408%2C40.164666&z=18",
-    },
-  ] as EventEntry[],
+  schedule: {
+    title: "Օրվա ծրագիր",
+    items: [
+      {
+        time: "13:00",
+        title: "Հանդիպում Սաղմոսավանքում",
+        description: "Հավաքվում ենք Սաղմոսավանքի մոտ",
+        icon: "car",
+      },
+      {
+        time: "13:20",
+        title: "Պսակադրություն",
+        description: "Սուրբ պսակ և աղոթք Սաղմոսավանքի եկեղեցում",
+        icon: "rings",
+      },
+      {
+        time: "14:00",
+        title: "Լուսանկարչություն",
+        description: "Հիշարժան լուսանկարների համար",
+        icon: "camera",
+      },
+      {
+        time: "15:00",
+        title: "Ֆուրշետ Սաղմոսավանք Garden-ում",
+        description:
+          "Սպասում ենք ձեզ մի օր լի երգով, խնդությամբ և լավ ընկերության միջոցով",
+        icon: "glasses",
+      },
+    ] satisfies ScheduleItem[],
+  },
 
   venue: {
-    name: "Լիաննա Գարդեն Հոլլ",
-    address: "Երևան, Հայաստան",
-    mapUrl: "https://maps.google.com/?q=Lianna+Garden+Hall+Yerevan",
+    title: "Վայր",
+    name: "Սաղմոսավանք",
+    region: "Աշտարակ, Հայաստան",
+    openMapLabel: "Բացել քարտեզում",
+    openMapUrl:
+      "https://www.google.com/maps/search/?api=1&query=40.380536,44.396672",
+    pins: [
+      {
+        id: "monastery",
+        label: "Սաղմոսավանք",
+        href: "https://www.google.com/maps/search/?api=1&query=40.380536,44.396672",
+        ariaLabel: "Բացել Սաղմոսավանքի քարտեզը",
+        icon: "pin",
+        top: "34%",
+        left: "58%",
+      },
+      {
+        id: "garden",
+        label: "Սաղմոսավանք\nGarden",
+        href: "https://yandex.com/maps/org/saghmosavan_garden/82933691801/",
+        ariaLabel: "Բացել Սաղմոսավանք Garden-ի քարտեզը",
+        icon: "utensils",
+        top: "62%",
+        left: "28%",
+      },
+    ] satisfies MapPin[],
   },
 
-  greeting: {
-    salutation: "Հարգելի",
-  },
-
-  labels: {
-    table: "Ձեր սեղանն է՝",
-    tableClosing: "Մաղթում ենք հաճելի երեկո",
+  farewell: {
+    message: "Սիրով սպասում ենք Ձեզ",
+    names: "Արթուր և Դիանա",
+    image: {
+      src: "/images/farewell.jpg",
+      alt: "Արևամուտ Արագածի և Կասաղի կիրճի վրա",
+    },
   },
 } as const;
 

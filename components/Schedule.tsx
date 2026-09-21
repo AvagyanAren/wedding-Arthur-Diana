@@ -58,7 +58,7 @@ export function Schedule() {
                 <ScheduleGlyph name={item.icon} className="h-[22px] w-[22px]" />
               </span>
 
-              <div className="flex min-w-0 flex-wrap items-center gap-x-3 gap-y-1">
+              <div className="flex min-w-0 flex-col gap-1">
                 <time
                   dateTime={item.time}
                   className="font-sans text-sm leading-none tabular-nums text-olive"

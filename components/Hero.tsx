@@ -17,30 +17,30 @@ export function Hero() {
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/25 via-transparent to-black/35"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/35"
       />
 
-      <div className="relative z-10 flex min-h-[100svh] flex-col items-center px-8 pb-10 pt-14 text-center">
-        <p className="font-sans text-[10px] font-normal uppercase tracking-[0.38em] text-charcoal/80">
+      <div className="relative z-10 flex min-h-[100svh] flex-col items-center px-8 pb-10 pt-14 text-center text-white/90">
+        <p className="font-sans text-[10px] font-normal uppercase tracking-[0.38em]">
           {hero.kicker}
         </p>
 
-        <h1 className="mt-8 flex flex-col items-center font-serif font-normal leading-none text-charcoal">
+        <h1 className="mt-8 flex flex-col items-center font-serif font-normal leading-none">
           <span className="text-[3.35rem] tracking-wide">{couple.groom}</span>
-          <span className="my-2 font-serif text-2xl font-light italic text-charcoal/80">
+          <span className="my-2 font-serif text-2xl font-light italic">
             {couple.conjunction}
           </span>
           <span className="text-[3.35rem] tracking-wide">{couple.bride}</span>
         </h1>
 
-        <p className="mt-6 font-sans text-[11px] uppercase tracking-[0.32em] text-charcoal/85">
+        <p className="mt-6 font-sans text-[11px] uppercase tracking-[0.32em]">
           {hero.date}
         </p>
-        <p className="mt-2 font-sans text-[11px] uppercase tracking-[0.32em] text-charcoal/75">
+        <p className="mt-2 font-sans text-[11px] uppercase tracking-[0.32em]">
           {hero.place}
         </p>
 
-        <p className="mt-auto font-sans text-[10px] uppercase tracking-[0.38em] text-white/90">
+        <p className="mt-auto font-sans text-[10px] uppercase tracking-[0.38em]">
           {hero.closing}
         </p>
       </div>
